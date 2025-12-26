@@ -6,5 +6,5 @@ function solution(my_string, overwrite_string, s) {
         return answer
     }
     
-    return answer + my_string.substr(separateLastIndex)
+    return answer + my_string.slice(separateLastIndex)
 }
