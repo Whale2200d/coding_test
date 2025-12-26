@@ -4,5 +4,5 @@ function solution(a, b) {
     
 //     return firstAnswer >= secondAnswer ? firstAnswer : secondAnswer
     
-    return Math.max(`${a}${b}`, `${b}${a}`)
+    return Math.max(+`${a}${b}`, +`${b}${a}`)
 }
