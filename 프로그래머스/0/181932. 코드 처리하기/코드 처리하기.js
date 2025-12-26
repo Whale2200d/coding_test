@@ -10,19 +10,10 @@ function solution(code) {
         }
         
         if (mode === 0) {
-            if (code[i] !== "1" && i % 2 === 0) {
-                ret += code[i]
-            } else if (code[i] === "1") {
-                mode = 1
-            }
+            if (code[i] !== "1" && i % 2 === 0) ret += code[i]
         } else {
-            if (code[i] !== "1" && i % 2 === 1) {
-                ret += code[i]
-            } else if (code[i] === "1") {
-                mode = 0
-            }
+            if (code[i] !== "1" && i % 2 === 1) ret += code[i]
         }
-        
     }
     
     return ret === "" ? "EMPTY" : ret
