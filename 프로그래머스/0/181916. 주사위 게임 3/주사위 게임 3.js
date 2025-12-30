@@ -5,15 +5,10 @@ function solution(a, b, c, d) {
     const [s, r] = arr.filter(v => arr.indexOf(v) === arr.lastIndexOf(v));
     
     if (set.size === 1) return 1111 * a
-    if (set.size === 2) {
-        return duplicate(arr).length === 1
-            ? (10*p+s)**2
-            : (p+q)*Math.abs(p-q)
-    }
-    if (set.size === 3) {
-        return s*r
-    }
-    return arr.sort((a, b) => a-b)[0]
+    if (set.size === 2 && duplicate(arr).length === 1) return (10*p+s)**2
+    if (set.size === 2) return (p+q)*Math.abs(p-q)
+    if (set.size === 3) return s*r
+    return Math.min(a, b, c, d)
 }
 
 function duplicate(arr) {
