@@ -1,6 +1,9 @@
 function solution(names) {
-    return names.reduce((a, c, i) => {
-        if (i % 5 === 0) a.push(c)
-        return a
-    }, [])
+    const answer = []
+    
+    for (let i=0; i < names.length; i+=5) {
+        answer.push(names[i])
+    }
+    
+    return answer
 }
