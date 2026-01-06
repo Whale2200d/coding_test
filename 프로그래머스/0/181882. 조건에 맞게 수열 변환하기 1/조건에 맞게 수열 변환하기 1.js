@@ -1,10 +1,7 @@
 function solution(arr) {
-    return arr.reduce((a, c, i) => {
-        if (c >= 50 && c % 2 === 0) {
-            a[i] = a[i] / 2
-        } else if (c < 50 && c % 2 !== 0) {
-            a[i] = a[i] * 2
-        }
-        return a
-    }, [...arr])
+    return arr.map((v, i) => {
+        if (v >= 50 && v % 2 === 0) return v/2
+        if (v < 50 && v % 2 !== 0) return v*2
+        return v
+    })
 }
