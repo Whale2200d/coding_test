@@ -1,8 +1,8 @@
 function solution(binomial) {
     const [strA, op, strB] = binomial.split(" ")
     
-    const a = Number(strA)
-    const b = Number(strB)
+    const a = +strA
+    const b = +strB
     
     if (op === '+') return a+b
     if (op === '-') return a-b
