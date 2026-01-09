@@ -1,16 +1,5 @@
 function solution(arr, k) {
-    const answer = []
-    const seen = new Set()
+    const set = new Set(arr)
     
-    for (const x of arr) {
-        if (!seen.has(x)) {
-            seen.add(x);
-            answer.push(x)
-            if (answer.length === k) break;
-        }
-    }
-    
-    while (answer.length < k) answer.push(-1)
-    
-    return answer
+    return set.size < k ? [...set, ...new Array(k-set.size).fill(-1)] : [...set].slice(0, k)
 }
