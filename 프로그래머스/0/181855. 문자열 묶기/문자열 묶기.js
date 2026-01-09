@@ -6,5 +6,5 @@ function solution(strArr) {
         counts[length] = (counts[length] ?? 0) + 1
     }
     
-    return Math.max(...counts.filter(v => v !== undefined))
+    return Math.max(...counts.filter(v => !!v))
 }
