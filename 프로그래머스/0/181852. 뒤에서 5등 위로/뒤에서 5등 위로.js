@@ -1,7 +1,3 @@
 function solution(num_list) {
-    const result = num_list.sort((a, b) => a-b)
-    
-    result.splice(0, 5)
-    
-    return result
+    return num_list.sort((a, b) => a-b).splice(5)
 }
