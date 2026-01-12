@@ -1,16 +1,9 @@
 function solution(picture, k) {
-    return picture.reduce((a, c) => {
-        const splited = c.split('')
-        let answer = ""
+    return picture.reduce((acc, cur) => {
+        const newStr = [...cur].reduce((a, c) => a+c.repeat(k), "")
+                
+        for (let i=0; i<k; i++) acc.push(newStr)
         
-        for (const str of splited) {
-            answer += str.repeat(k)
-        }
-        
-        for (let i=0; i<k; i++) {
-            a.push(answer)    
-        }
-        
-        return a
+        return acc
     }, [])
 }
