@@ -1,14 +1,8 @@
 function solution(n) {
-    const answer = []
+    const answer = Array.from(Array(n), (v) => Array(n).fill(0))
     
     for (let i=0; i<n; i++) {
-        const arr = []
-        
-        for (let j=0; j<n; j++) {
-            arr.push(+(i===j))
-        }
-        
-        answer.push(arr)
+        answer[i][i] = 1
     }
     
     return answer
