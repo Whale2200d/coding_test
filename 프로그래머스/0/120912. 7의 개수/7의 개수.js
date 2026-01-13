@@ -1,6 +1,3 @@
 function solution(array) {
-    const str = array.join('')
-    const remain = str.split('7').join('')
-    
-    return str.length - remain.length
+    return array.join('').split('7').length-1
 }
