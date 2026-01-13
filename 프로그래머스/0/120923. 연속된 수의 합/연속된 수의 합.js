@@ -1,13 +1,6 @@
 function solution(num, total) {
-    const answer = Array.from({ length: num }, (_, i) => i+1)
-    
-    while(true) {
-        const fv = answer[0]
-        const lv = answer[answer.length-1]
-        const reduced = answer.reduce((a, c) => a+c)
-        
-        if (reduced > total) { answer.unshift(fv-1); answer.pop(); }
-        else if (reduced < total) { answer.push(lv+1); answer.shift(); }
-        else return answer
-    }
+    var min = Math.ceil(total/num - Math.floor(num/2));
+    var max = Math.floor(total/num + Math.floor(num/2));
+
+    return new Array(max-min+1).fill(0).map((el,i)=>{return i+min;});
 }
