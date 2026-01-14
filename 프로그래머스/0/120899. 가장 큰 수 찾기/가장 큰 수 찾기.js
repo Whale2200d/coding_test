@@ -1,5 +1,5 @@
 function solution(array) {
-    const obj = array.map((v, i) => { return {value: v, index: i} }).sort((a, b) => b.value-a.value)[0]
+    const max = Math.max(...array)
     
-    return [obj.value, obj.index]
+    return [max, array.indexOf(max)]
 }
