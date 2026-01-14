@@ -5,9 +5,8 @@ function solution(my_string) {
     if (Number(c)) {
       const symbol = result[i-1]
       if (symbol) return symbol === "+" ? +a + +c : +a - +c
-      return +a
-    } else {
-      return +a
     }
+    
+    return +a
   })
 }
