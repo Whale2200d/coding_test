@@ -1,5 +1,6 @@
 function solution(i, j, k) {
-    const answer = Array.from({ length:j-i+1 }, (_, idx) => (i+idx).toString())
+    let a = ''
+    for (i; i<=j; i++) a += i
     
-    return answer.reduce((a, c) => a + (c.match(new RegExp(k, 'g')) || []).length, 0)
+    return a.split(k).length-1
 }
