@@ -1,15 +1,16 @@
 function solution(array, n) {
-    let answer = []
+    const answer = {
+        value: 0,
+        close: 99
+    }
     
     for (const v of array) {
         const distance = Math.abs(n-v)
-        if (answer.length === 0 || distance === answer[0].close) {
-            answer.push({ value: v, close: distance })
-        } else if (distance < answer[0].close) {
-            answer = []
-            answer.push({ value: v, close: distance })
+        if (distance < answer.close || (distance === answer.close && answer.value > v)) {
+            answer.value = v
+            answer.close = distance
         }
     }
     
-    return answer.sort((a, b) => a.value-b.value)[0].value
+    return answer.value
 }
