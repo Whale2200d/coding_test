@@ -1,16 +1,6 @@
 function solution(array, n) {
-    const answer = {
-        value: 0,
-        close: 99
-    }
-    
-    for (const v of array) {
-        const distance = Math.abs(n-v)
-        if (distance < answer.close || (distance === answer.close && answer.value > v)) {
-            answer.value = v
-            answer.close = distance
-        }
-    }
-    
-    return answer.value
+    return array.sort((a, b) =>
+		Math.abs(n-a) - Math.abs(n-b) // 1순위: 거리 비교
+		|| a-b // 2순위: 값 비교(오름차순)
+	)[0]
 }
