@@ -1,9 +1,5 @@
 function solution(lines) {
-    const events = lines.reduce((a, [s, e]) => {
-        a.push([s, +1])
-        a.push([e, -1])
-        return a
-    }, []).sort((a, b) => a[0]-b[0])
+    const events = lines.reduce((a, [s, e]) => [...a, [s, +1], [e, -1]], []).sort((a, b) => a[0]-b[0])
         
     let result = 0
     let acc = 0
@@ -14,7 +10,7 @@ function solution(lines) {
         const nextPoint = events[i+1][0]
         const distance = nextPoint - currentPoint
         
-        if (acc >= 2) result += distance;
+        if (acc >= 2) result += distance; // 2이상인 구간만 더한다.
     }
     
     return result
