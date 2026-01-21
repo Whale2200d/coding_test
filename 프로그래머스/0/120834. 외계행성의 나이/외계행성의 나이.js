@@ -1,4 +1,4 @@
 function solution(age) {
-    const changed = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' ]
+    const changed = 'abcdefghij'
     return [...age.toString()].reduce((a, c) => a+changed[c], '')
 }
