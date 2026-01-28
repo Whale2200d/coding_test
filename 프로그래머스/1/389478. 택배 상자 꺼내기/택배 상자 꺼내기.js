@@ -3,7 +3,7 @@ function solution(n, w, num) {
   const row = Math.floor((num - 1) / w);
   const k = (num - 1) % w;
 
-  // 지그재그 반영한 "실제 열(col)"
+  // 지그재그 반영한 "실제 열"
   const col = (row % 2 === 0) ? k : (w - 1 - k);
 
   // 전체 층 수
