@@ -13,14 +13,13 @@ function solution(a, b) {
 //     return answer
     
     
-    // 반복문 없이, 등차수열의 합 공식
-    const low = a > b ? b : a
-    const high = a > b ? a : b
+    // 반복문 없이, 등차수열의 합 공식(가우스 공식)
+//     const low = a > b ? b : a
+//     const high = a > b ? a : b
     
-    const sumLow = low * (1+low) / 2
-    const sumHigh = high * (1+high) / 2
+//     const sumLow = low * (1+low) / 2
+//     const sumHigh = high * (1+high) / 2
     
-    return sumHigh - sumLow + low
-    
-    // 반복문 없이, 가우스 공식 사용
+//     return sumHigh - sumLow + low
+    return (a+b) * (Math.abs(a-b) + 1) / 2
 }
