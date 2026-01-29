@@ -1,9 +1,11 @@
 function solution(n) {
-    let x = 1
+    let low = 1, high = Math.floor(Math.sqrt(n))
     
-    while(x*x <= n) {
-        if (x*x === n) return (x+1)**2
-        else x++
+    while(low <= high) {
+        const mid = Math.floor((low+high)/2)
+        if (mid**2 === n) return (mid+1)**2
+        else if (mid**2 < n) low = mid+1
+        else if (mid**2 > n) high = mid-1
     }
     
     return -1
