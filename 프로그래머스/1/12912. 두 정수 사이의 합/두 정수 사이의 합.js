@@ -21,5 +21,5 @@ function solution(a, b) {
 //     const sumHigh = high * (1+high) / 2
     
 //     return sumHigh - sumLow + low
-    return (a+b) * (Math.abs(a-b) + 1) / 2
+    return (Math.abs(a-b) + 1) * (a+b) / 2 // 개수 * (첫항 + 끝항) / 2
 }
