@@ -7,8 +7,7 @@ function solution(num) {
     while(count <= 500) {
         count++
 
-        if (result%2 === 0) result /= 2
-        else result = result*3 + 1
+        result%2 === 0 ? result /= 2 : result = result*3 + 1
         
         if (result === 1) break
     }
