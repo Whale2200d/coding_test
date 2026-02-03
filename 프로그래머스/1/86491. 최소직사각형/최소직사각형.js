@@ -1,7 +1,4 @@
 function solution(sizes) {
-    const sorted = [...sizes].map((arr) => arr.sort((a, b) => a-b))
-    const maxWidth = Math.max(...sorted.map((arr) => arr[0]))
-    const maxHeight = Math.max(...sorted.map((arr) => arr[1]))
-    
-    return maxWidth * maxHeight
+    const [width, height] = sizes.reduce(([h, v], [a, b]) => [Math.max(h, Math.max(a, b)), Math.max(v, Math.min(a, b))], [0, 0])
+    return width * height
 }
