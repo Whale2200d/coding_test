@@ -1,14 +1,13 @@
 function solution(s) {
-    const alphabets = [
-        'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'
-    ]
-    let result = s
-    
-    for (const word of alphabets) {
-        if (result.includes(word)) { 
-            result = result.replaceAll(word, alphabets.indexOf(word))
-        }
-    }
-    
-    return +result
+    const wordToDigit = {
+    zero: '0', one: '1', two: '2', three: '3', four: '4',
+    five: '5', six: '6', seven: '7', eight: '8', nine: '9',
+  }
+
+  const converted = s.replace(
+    /zero|one|two|three|four|five|six|seven|eight|nine/g,
+    (matchedWord) => wordToDigit[matchedWord]
+  )
+
+  return Number(converted)
 }
