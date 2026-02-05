@@ -6,10 +6,9 @@ function solution(cards1, cards2, goal) {
         const firstWord = cards1[firstIndex]
         const secondWord = cards2[secondIndex]
         
-        if (firstWord === target) { firstIndex++; continue }
-        if (secondWord === target) { secondIndex++; continue }
-        
-        return "No"
+        if (firstWord === target) { firstIndex++ }
+        else if (secondWord === target) { secondIndex++ }
+        else { return "No" }
     }
     
     return "Yes"
