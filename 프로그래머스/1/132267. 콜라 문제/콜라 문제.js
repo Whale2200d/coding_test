@@ -1,4 +1,5 @@
 function solution(a, b, n) {
-    const service = (n-b) / (a-b)
-	return Math.floor(service) * b
+    const no_service = 1 // (a-b) / (a-b)
+    const service = (n-a) / (a-b)
+	return Math.floor(no_service + service) * b
 }
