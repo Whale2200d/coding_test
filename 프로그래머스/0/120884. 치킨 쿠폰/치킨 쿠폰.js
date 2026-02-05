@@ -1,14 +1,7 @@
 function solution(chicken) {
-    let max = 0;
-    let currentCoupons = chicken; // 현재 쿠폰의 개수
+    if (chicken === 0) return 0
     
-    while(currentCoupons >= 10) {
-        const service = Math.floor(currentCoupons/10)
-        const rest = currentCoupons%10
-        
-        max += service
-        currentCoupons = service+rest
-    }
+    const service = (chicken - 1) / 9
     
-    return max
+    return Math.floor(service)
 }
