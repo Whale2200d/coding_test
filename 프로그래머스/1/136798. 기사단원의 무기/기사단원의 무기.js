@@ -14,9 +14,12 @@ function solution(number, limit, power) {
 }
 
 function getAliquotCount(num) {
-    let count = 0
+    if (num === 1) return 1
+    if (num === 2 || num === 3) return 2
+
+    let count = 2
     
-    for (let d=1; d*d <= num; d++) { 
+    for (let d=2; d*d <= num; d++) { 
         if (num%d !== 0) continue;
         count += d*d === num ? 1 : 2 
     }
