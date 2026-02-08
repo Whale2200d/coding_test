@@ -1,9 +1,9 @@
 function solution(n) {
     let count = 0
     
-    // 4부터 n까지 돌면서
+    // 2부터 n까지 돌면서
     for (let i=2; i<=n; i++) {
-        // 소수읹디 판별
+        // 소수인지 판별
         if (isPrime(i)) count++
     }
     
