@@ -1,13 +1,10 @@
 function solution(new_id) {
     if (isValidateId(new_id)) return new_id
     
-    // 나타낼 수 있는 특수문자
-    const specialCharacter = '-_.~!@#$%^&*()=+[{]}:?,<>/'
-    
     // 아이디 규칙에 맞지 않는 아이디를 입력했을 때,
     let changedId = new_id
+    
     // 2. 입력된 아이디와 유사한 아이디 생성 조건
-
     // 2.1. 소문자로 치환
     // 2.2. 가능 문자 제외 모두 제거
     // 2.3. 연속된 .(dot)은 하나로 치환
@@ -17,8 +14,6 @@ function solution(new_id) {
                 .replace(/[^a-z0-9._-]/g, '')
                 .replace(/\.+/g, '.')
                 .replace(/^\.|\.$/g, '')
-    
-    
 
     // 2.5. 빈 문자열은 'a' 대입
     // 2.7. 길이가 2자 이하라면, 마지막 문자를 3이 될 때까지 반복해서 추가.
