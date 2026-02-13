@@ -28,7 +28,7 @@ function solution(bandage, health, attacks) {
         successSecond++
         currentHealth = Math.min(health, currentHealth+healPerSecond)
         
-        // castTime까지 성공하면, 추가 체력 회복
+        // 시전 시간까지 붕대 감기를 성공하면, 추가 체력 회복
         if (castTime === successSecond) {
             currentHealth = Math.min(health, currentHealth+bonusHeal)
             successSecond = 0
