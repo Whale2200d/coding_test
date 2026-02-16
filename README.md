@@ -98,6 +98,8 @@ export const ALGORITHMS = [
   "binary-search", // 이분 탐색(Binary Search): 정렬된 범위에서 반씩 줄이며 탐색
   "sort", // 정렬(Sorting): 정렬 후 규칙/탐색 최적화에 활용
   "simulation", // 시뮬레이션(Simulation): 문제 조건을 그대로 구현
+  "io-model", // IO 체점형(I/O Judging): stdin/stdout 기반으로 입출력 처리
+  "math", // 수학적 접근(Math): 공식 유도, 수열, 조합론, 정수론 등 계산 기반 해결
 ] as const;
 
 export const DATA_STRUCTURES = [
@@ -121,6 +123,8 @@ export const MISTAKES = [
   "parsing", // 파싱(Parsing): split/정규식/형변환(Number) 실수
   "state-reset", // 상태 초기화(State Reset): 누적 변수/플래그 리셋 누락
   "overflow-precision", // 오버플로/정밀도(Overflow/Precision): 큰 수/부동소수점 문제
+  "execution-flow", // 실행 흐름(Execution Flow): 이벤트/비동기 순서/종료 시점 오해
+  "math-formula", // 수학 공식 유도/변형 오류 (등차수열, 조합 공식 등)
 ] as const;
 
 // 타입 추론(Type Inference): 배열 요소를 유니온 타입으로 만든다.
