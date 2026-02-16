@@ -45,6 +45,8 @@ timeMinutes: 0
 
 ---
 
+## 내가 막힌 지점
+
 ## 핵심 아이디어(Key Idea)
 
 ## Edge Cases
@@ -55,6 +57,11 @@ timeMinutes: 0
 - Space:
 
 ## Refactor
+
+## 재출제 가능 질문
+
+- filter 내부 콜백의 실행 구조
+- Time Complexity 설명
 
 ## Interview 설명 버전
 ```
