@@ -13,7 +13,7 @@ function solution(n) {
     let count = 0
     
     // 3. a >= 1
-    while (((2*n/k) - (k-1)) / 2 >= 1) {
+    while (2*n/k >= k+1) {
         const leftNumber = (2*n/k)
         const rightNumber = k-1
         
