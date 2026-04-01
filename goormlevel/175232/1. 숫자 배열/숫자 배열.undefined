@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+
+# 입력 받기 (N만 입력)
+N = int(sys.stdin.read().strip())
+
+# N * N 배열 출력
+for i in range(N):
+	row = [str(i * N + j + 1) for j in range(N)]
+	print(" ".join(row))
