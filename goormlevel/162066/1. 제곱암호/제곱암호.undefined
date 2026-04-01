@@ -1,0 +1,35 @@
+// Run by Node.js
+const readline = require('readline');
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+	let lines = []
+	for await (const line of rl) {
+		lines.push(line.trim())
+		
+	}
+
+	const N = Number(lines[0])
+	const S = lines[1]
+
+	// 1. 처음에는 비어있는 상태
+	let decoded = ''
+
+	for (let i=0; i < N; i += 2) {
+		const char = S[i]
+		const num = Number(S[i+1])
+		const shift = num ** 2
+		
+		// 2. 첫 번째 문자부터 복호화
+		// 3. i가 홀수 -> "알파벳의 사전 기준 다음 문자로 바꾸는 작업"을 암호의 i+1번째 수의 제곱번 시행.
+		// 4. z에서 사전 기준 다음 문자로 바꿔야 하는 경우에는 a로 바뀌게 된다.
+		const code = char.charCodeAt(0)
+		// console.log(code)
+		const newCode = (code - 97 + shift) % 26 + 97
+		decoded += String.fromCharCode(newCode)
+	}
+
+	console.log(decoded)
+	rl.close();
+	process.exit();
+})();
