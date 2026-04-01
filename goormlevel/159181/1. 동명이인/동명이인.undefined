@@ -1,0 +1,23 @@
+// Run by Node.js
+const readline = require('readline');
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+	let lines = []
+	for await (const line of rl) {
+		lines.push(line.trim())
+	}
+
+	// console.log(lines)
+	const [count, name] = lines[0].split(' ')
+
+	let duplicate = 0;
+	for (let i=1; i<=Number(count); i++) {
+		// console.log(lines[i])
+		if (lines[i].includes(name)) { duplicate++ }
+	}
+
+	console.log(duplicate)
+	rl.close();
+	process.exit();
+})();
