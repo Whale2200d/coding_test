@@ -1,0 +1,20 @@
+// Run by Node.js
+const readline = require('readline');
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+	
+	for await (const line of rl) {
+		const [A, B] = line.trim().split(' ');
+
+		// A와 B를 뒤집고 앞에 0 제거 (''일 경우 0 처리)
+		let reversedA = A.split('').reverse().join('').replace(/^0+/, '') || '0'
+		let reversedB = B.split('').reverse().join('').replace(/^0+/, '') || '0'
+
+		// 숫자로 비교해서 더 큰 값 출력
+		console.log(Number(reversedA) > Number(reversedB) ? A : B)
+		rl.close();
+	}
+	
+	process.exit();
+})();
