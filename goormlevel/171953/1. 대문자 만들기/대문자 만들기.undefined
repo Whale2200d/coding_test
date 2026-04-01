@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+
+stringList = sys.stdin.read().splitlines()
+
+N = int(stringList[0])
+S = stringList[1]
+
+print(S.upper())
