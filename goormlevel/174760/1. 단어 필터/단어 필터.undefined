@@ -1,0 +1,14 @@
+const fs = require('fs')
+const input = fs.readFileSync(0, 'utf-8').trim().split('\n')
+
+const std = input[1]
+let result = input[2]
+
+while (result.includes(std)) {
+	const newResult = result.split(std).filter((v) => v !== '')
+
+	if (result.length === 0) break
+	else { result = newResult.join('') }
+}
+
+console.log(result.length === 0 ? 'EMPTY' : result)
