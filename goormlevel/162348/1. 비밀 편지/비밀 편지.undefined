@@ -1,0 +1,39 @@
+// Run by Node.js
+const fs = require('fs')
+const input = fs.readFileSync(0, 'utf-8').trim().split('\n')
+let line = 0
+const readLine = () => input[line++]
+
+const T = parseInt(readLine())
+
+// 1. 암호화
+for (let t=0; t<T; t++) {
+	const S = readLine()
+	const [type, token] = readLine().trim().split(" ")
+
+	let result = '';
+	const length = token.length;
+
+	for (let i=0; i<S.length; i++) {
+		const char = S[i]
+		if (/[a-zA-Z]/.test(char)) {
+			const isUpper = char === char.toUpperCase()
+			
+			const oldAscii = char.charCodeAt(0)
+			const oldIndex = oldAscii - (isUpper ? 65 : 97) // 대문자 : 소문자
+
+			// shift 연산
+			const shift = token[i % token.length].charCodeAt(0)
+			const newIndex = type === 'E' ? (oldIndex + shift) % 26 : ((oldIndex - shift) % 26 + 26) % 26
+			
+			const newAscii = newIndex + (isUpper ? 65 : 97) // 대문자 : 소문자
+			const newChar = String.fromCharCode(newAscii)
+			// console.log('newChar:', newChar)
+			result += newChar
+		} else {
+			result += char
+		}
+	}
+
+	console.log(result)
+}
