@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+
+string = sys.stdin.read().strip()
+
+checkList = ['1', 'I', 'l', '|']
+for i in checkList:
+	print(string.count(i))
